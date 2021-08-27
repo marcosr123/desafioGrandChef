@@ -1,0 +1,14 @@
+@import "~antd/dist/antd.css";
+
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+
+.App-link {
+  color: #09d3ac;
+}
