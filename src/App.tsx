@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { Layout, Menu, Divider, Input, Col, Row, Card, Space } from "antd";
 import {
   MenuOutlined,
@@ -7,12 +8,12 @@ import {
 } from "@ant-design/icons";
 import Title from "antd/lib/typography/Title";
 import "./App.css";
-import Chart from "./components/Chart"
+import Chart from "./components/Chart";
+import ChartPizza from "./components/ChartPizza";
 
 const { Header, Content } = Layout;
-const { Search } = Input;
 const rowProps = {
-  gutter: 8,
+  gutter: 16,
 };
 
 const styleHeader = {
@@ -59,7 +60,12 @@ const App = () => {
                   borderRadius: "5px",
                 }}
               >
-                <LineChartOutlined /> Teste
+                <Row {...rowProps}>
+                  <Col>
+                    <LineChartOutlined style={{ fontSize: "30px" }} />
+                  </Col>
+                  <Col>Faturamento</Col>
+                </Row>
               </Card>
             </Col>
             <Col xs={6} sm={6} md={6} lg={6}>
@@ -70,18 +76,43 @@ const App = () => {
                   borderRadius: "5px",
                 }}
               >
-                <TeamOutlined />
-                Teste 2
+                <Row {...rowProps}>
+                  <Col>
+                    <TeamOutlined style={{ fontSize: "30px" }} />
+                  </Col>
+                  <Col>Participantes</Col>
+                </Row>
               </Card>
+            </Col>
+            <Col span={10}>
+              <Card style={{
+                  marginTop: "24px",
+                  marginLeft: "24px",
+                  borderRadius: "5px",
+                }}>Teste</Card>
             </Col>
           </Row>
           <Row>
             <Col span={12}>
               <Card style={{ marginTop: "24px", borderRadius: "5px" }}>
-                <Chart/>
+                <Chart />
               </Card>
             </Col>
           </Row>
+          <Row>
+            <Col span={12}>
+              <Card
+                style={{
+                  marginTop: "24px",
+                  borderRadius: "5px",
+                  height: "250px",
+                }}
+              >
+                <ChartPizza />
+              </Card>
+            </Col>
+          </Row>
+          <Col></Col>
         </Content>
       </Layout>
     </div>

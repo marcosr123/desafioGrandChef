@@ -7,27 +7,40 @@ const data = {
     {
       data: [100, 200, 150, 200, 300, 200, 400],
       borderColor: "#EF6C00",
-      options: {
-        
-    }
+      pointBackgroundColor: "#EF6C00",
+      options: {},
     },
   ],
 };
 
 const Chart = () => {
-  return <Line data={data} options={
-    {
-        label: {
-            display: false
-        },
+  return (
+    <Line
+      data={data}
+      options={{ 
         plugins: {
-        title: {
+          legend: {
+            display: false,
+          },
+          title: {
             display: true,
-            text: 'Custom Chart Title',
-            align: 'start'
-        }
-    }}
-  }/>;
+            text: "Faturamento Diário",
+            align: "start",
+            padding: {
+              top: 0,
+              bottom: 30,
+              right: 0,
+              left: 20
+            },
+            font: {
+              family: "Roboto",
+              size: 14
+            }
+          },
+        },
+      }}
+    />
+  );
 };
 
 export default Chart;
