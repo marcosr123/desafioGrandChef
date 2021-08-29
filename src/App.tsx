@@ -1,19 +1,35 @@
-// eslint-disable-next-line
-import { Layout, Menu, Divider, Input, Col, Row, Card, Space } from "antd";
+import {
+  Layout,
+  Input,
+  Col,
+  Row,
+  Card,
+  Typography,
+  Cascader,
+} from "antd";
 import {
   MenuOutlined,
   SearchOutlined,
   LineChartOutlined,
   TeamOutlined,
+  DownOutlined,
+  CalendarOutlined,
 } from "@ant-design/icons";
 import Title from "antd/lib/typography/Title";
 import "./App.css";
 import Chart from "./components/Chart";
+import CardCoca from "./components/Card"
+import CardBurger from "./components/CardBurger"
+import CardEspeto from "./components/CardEspeto"
 import ChartPizza from "./components/ChartPizza";
+import "../public/lata.svg";
 
-const { Header, Content } = Layout;
+const { Text } = Typography;
+
+const { Header } = Layout;
 const rowProps = {
   gutter: 16,
+  wrap: false,
 };
 
 const styleHeader = {
@@ -35,40 +51,166 @@ const App = () => {
             Desempenho de Promoções
           </Title>
         </Header>
-        <Content
+        <Layout
           style={{
             margin: "25px 24px 24px 72px",
             display: "grid",
             alignItems: "center",
+            backgroundColor: "white",
           }}
         >
           <Row>
-            <Col span={6}>
-              <Input
-                prefix={<SearchOutlined />}
-                style={{ borderRadius: "5px" }}
-              />
+            <Col span={13}>
+              <Row>
+                <Col span={12}>
+                  <Input
+                    prefix={<SearchOutlined />}
+                    style={{ borderRadius: "5px" }}
+                    defaultValue={["Procurar um cliente"]}
+                  />
+                </Col>
+              </Row>
+              <Row wrap={false}>
+                <Col span={12}>
+                  <Card
+                    style={{
+                      marginTop: "24px",
+                      backgroundImage:
+                        "linear-gradient(to top, #EF6C00 , #EF6C00)",
+                      color: "white",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    <Row {...rowProps}>
+                      <Col>
+                        <LineChartOutlined style={{ fontSize: "44px" }} />
+                      </Col>
+                      <Col>
+                        <Row>
+                          <Text style={{ color: "white", fontSize: "12px" }}>
+                            Faturamento
+                          </Text>
+                        </Row>
+                        <Row>
+                          <Text
+                            style={{
+                              color: "white",
+                              fontSize: "20px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            R$ 300,00
+                          </Text>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Col>
+                <Col span={12}>
+                  <Card
+                    style={{
+                      marginTop: "24px",
+                      marginLeft: "20px",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    <Row {...rowProps}>
+                      <Col>
+                        <TeamOutlined
+                          style={{ color: "gray", fontSize: "44px" }}
+                        />
+                      </Col>
+                      <Col>
+                        <Row>
+                          <Text style={{ color: "gray", fontSize: "12px" }}>
+                            Participantes
+                          </Text>
+                        </Row>
+                        <Row>
+                          <Text
+                            style={{
+                              color: "gray",
+                              fontSize: "20px",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            100 clientes
+                          </Text>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Col>
+              </Row>
+              <Row {...rowProps}>
+                <Col span={24}>
+                  <Card style={{ marginTop: "24px", borderRadius: "5px" }}>
+                    <Chart />
+                  </Card>
+                </Col>
+              </Row>
+              <Row {...rowProps}>
+                <Col span={24}>
+                  <Card
+                    style={{
+                      marginTop: "24px",
+                      borderRadius: "5px",
+                      height: "250px",
+                    }}
+                  >
+                    <ChartPizza />
+                  </Card>
+                </Col>
+              </Row>
             </Col>
-          </Row>
-          <Row>
-            <Col xs={6} sm={6} md={6} lg={6}>
+            <Col span={11}>
+              <Row {...rowProps}>
+                <Col>
+                  <Cascader
+                    suffixIcon={<DownOutlined />}
+                    style={{ marginLeft: "24px" }}
+                    defaultValue={["Porcentagem"]}
+                  />
+                </Col>
+                <Col>
+                  <Cascader
+                    placeholder="Data"
+                    suffixIcon={<CalendarOutlined />}
+                    style={{ marginLeft: "24px" }}
+                    defaultValue={["Ultimos 7 dias"]}
+                  />
+                </Col>
+              </Row>
               <Card
                 style={{
                   marginTop: "24px",
-                  backgroundImage: "linear-gradient(to top, #EF6C00 , #EF6C00)",
-                  color: "white",
+                  marginLeft: "24px",
                   borderRadius: "5px",
+                  height: "450px",
                 }}
               >
-                <Row {...rowProps}>
-                  <Col>
-                    <LineChartOutlined style={{ fontSize: "30px" }} />
+                <Row>
+                  <Col span={17}>
+                    <Text
+                      style={{
+                        color: "gray",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Produtos
+                    </Text>
                   </Col>
-                  <Col>Faturamento</Col>
+                  <Col>
+                    <Text style={{ color: "gray", fontSize: "12px" }}>
+                      Mais vendidos <DownOutlined />
+                    </Text>
+                  </Col>
                 </Row>
+                <CardCoca/>
+                <CardBurger/>
+                <CardEspeto/>
               </Card>
-            </Col>
-            <Col xs={6} sm={6} md={6} lg={6}>
               <Card
                 style={{
                   marginTop: "24px",
@@ -76,44 +218,54 @@ const App = () => {
                   borderRadius: "5px",
                 }}
               >
-                <Row {...rowProps}>
-                  <Col>
-                    <TeamOutlined style={{ fontSize: "30px" }} />
+                <Row>
+                  <Col span={17}>
+                    <Text
+                      style={{
+                        color: "gray",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Serviços
+                    </Text>
                   </Col>
-                  <Col>Participantes</Col>
+                  <Col>
+                    <Text style={{ color: "gray", fontSize: "12px" }}>
+                      Mais utilizados <DownOutlined />
+                    </Text>
+                  </Col>
                 </Row>
+                <Card
+                  style={{
+                    marginTop: "16px",
+                    borderRadius: "5px",
+                  }}
+                >
+                  <Row>
+                    <Text
+                      style={{
+                        fontSize: "10px",
+                      }}
+                    >
+                      Permite cobrar taxa de entrega de pedidos
+                    </Text>
+                  </Row>
+                  <Row>
+                    <Text
+                      style={{
+                        color: "gray",
+                        fontSize: "10px",
+                      }}
+                    >
+                      Quantidade: 33 · R$ 20,00 em média
+                    </Text>
+                  </Row>
+                </Card>
               </Card>
             </Col>
-            <Col span={10}>
-              <Card style={{
-                  marginTop: "24px",
-                  marginLeft: "24px",
-                  borderRadius: "5px",
-                }}>Teste</Card>
-            </Col>
           </Row>
-          <Row>
-            <Col span={12}>
-              <Card style={{ marginTop: "24px", borderRadius: "5px" }}>
-                <Chart />
-              </Card>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={12}>
-              <Card
-                style={{
-                  marginTop: "24px",
-                  borderRadius: "5px",
-                  height: "250px",
-                }}
-              >
-                <ChartPizza />
-              </Card>
-            </Col>
-          </Row>
-          <Col></Col>
-        </Content>
+        </Layout>
       </Layout>
     </div>
   );
