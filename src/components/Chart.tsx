@@ -19,6 +19,10 @@ const Chart = () => {
       data={data}
       options={{ 
         plugins: {
+          tooltip: {
+            xAlign: "center",
+            yAlign: "bottom"
+          },
           legend: {
             display: false,
           },

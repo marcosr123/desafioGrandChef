@@ -70,8 +70,8 @@ const App = () => {
                   <Card
                     style={{
                       marginTop: "24px",
-                      backgroundImage:
-                        "linear-gradient(to top, #EF6C00 , #EF6C00)",
+                      background:
+                        "linear-gradient(180deg, rgba(239, 108, 0, 0.75) 0%, #EF6C00 100%)",
                       color: "white",
                       borderRadius: "5px",
                     }}
@@ -107,6 +107,7 @@ const App = () => {
                       marginTop: "24px",
                       marginLeft: "20px",
                       borderRadius: "5px",
+                      boxShadow: "0px 1px 4px #aaaaaa",
                     }}
                   >
                     <Row {...rowProps}>
@@ -139,7 +140,7 @@ const App = () => {
               </Row>
               <Row {...rowProps}>
                 <Col span={24}>
-                  <Card style={{ marginTop: "24px", borderRadius: "5px" }}>
+                  <Card style={{ marginTop: "24px", borderRadius: "5px", boxShadow: "0px 1px 4px #aaaaaa", }}>
                     <Chart />
                   </Card>
                 </Col>
@@ -151,6 +152,7 @@ const App = () => {
                       marginTop: "24px",
                       borderRadius: "5px",
                       height: "250px",
+                      boxShadow: "0px 1px 4px #aaaaaa",
                     }}
                   >
                     <ChartPizza />
@@ -182,6 +184,7 @@ const App = () => {
                   marginLeft: "24px",
                   borderRadius: "5px",
                   height: "450px",
+                  boxShadow: "0px 1px 4px #aaaaaa",
                 }}
               >
                 <Row>
@@ -211,6 +214,7 @@ const App = () => {
                   marginTop: "24px",
                   marginLeft: "24px",
                   borderRadius: "5px",
+                  boxShadow: "0px 1px 4px #aaaaaa",
                 }}
               >
                 <Row>
