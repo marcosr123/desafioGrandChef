@@ -39,11 +39,12 @@ const CardCoca = () => {
                   Espeto de Carne
                 </Text>
               </Col>
-              <Col span={14}>
+              <Col span={18}>
                 <Text
                   style={{
                     fontSize: "10px",
                     color: "gray",
+                    marginLeft: "32px"
                   }}
                 >
                   Preço / Promoção
@@ -61,11 +62,12 @@ const CardCoca = () => {
                   Quantidade: 80
                 </Text>
               </Col>
-              <Col span={14}>
+              <Col span={18}>
                 <Text
                   style={{
                     fontSize: "12px",
                     color: "gray",
+                    marginLeft: "32px"
                   }}
                 >
                   {"R$ 4,50 / "}

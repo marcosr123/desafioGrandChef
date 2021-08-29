@@ -39,11 +39,12 @@ const CardBurger = () => {
                   X-Burger
                 </Text>
               </Col>
-              <Col span={14}>
+              <Col span={24}>
                 <Text
                   style={{
                     fontSize: "10px",
                     color: "gray",
+                    marginLeft: "30px"
                   }}
                 >
                   Preço / Promoção
@@ -61,11 +62,12 @@ const CardBurger = () => {
                   Quantidade: 55
                 </Text>
               </Col>
-              <Col span={16}>
+              <Col span={20}>
                 <Text
                   style={{
                     fontSize: "12px",
                     color: "gray",
+                    marginLeft: "34px"
                   }}
                 >
                   {"R$ 42,35 / "}
@@ -107,6 +109,7 @@ const CardBurger = () => {
               style={{
                 fontSize: "12px",
                 color: "gray",
+                marginLeft: "30px"
               }}
             >
               {"Resgates: "}

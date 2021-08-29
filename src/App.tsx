@@ -1,12 +1,4 @@
-import {
-  Layout,
-  Input,
-  Col,
-  Row,
-  Card,
-  Typography,
-  Cascader,
-} from "antd";
+import { Layout, Input, Col, Row, Card, Typography, Cascader } from "antd";
 import {
   MenuOutlined,
   SearchOutlined,
@@ -18,9 +10,9 @@ import {
 import Title from "antd/lib/typography/Title";
 import "./App.css";
 import Chart from "./components/Chart";
-import CardCoca from "./components/Card"
-import CardBurger from "./components/CardBurger"
-import CardEspeto from "./components/CardEspeto"
+import CardCoca from "./components/Card";
+import CardBurger from "./components/CardBurger";
+import CardEspeto from "./components/CardEspeto";
 import ChartPizza from "./components/ChartPizza";
 import "../public/lata.svg";
 
@@ -53,10 +45,13 @@ const App = () => {
         </Header>
         <Layout
           style={{
-            margin: "25px 24px 24px 72px",
+            alignSelf: "center",
+            marginTop: "25px",
             display: "grid",
             alignItems: "center",
             backgroundColor: "white",
+            width: "1024px",
+            height: "768px",
           }}
         >
           <Row>
@@ -207,9 +202,9 @@ const App = () => {
                     </Text>
                   </Col>
                 </Row>
-                <CardCoca/>
-                <CardBurger/>
-                <CardEspeto/>
+                <CardCoca />
+                <CardBurger />
+                <CardEspeto />
               </Card>
               <Card
                 style={{

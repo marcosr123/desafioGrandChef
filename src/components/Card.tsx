@@ -44,6 +44,7 @@ const CardCoca = () => {
                   style={{
                     fontSize: "10px",
                     color: "gray",
+                    marginLeft: "30px"
                   }}
                 >
                   Preço / Promoção
@@ -61,11 +62,12 @@ const CardCoca = () => {
                   Quantidade: 35
                 </Text>
               </Col>
-              <Col span={14}>
+              <Col span={18}>
                 <Text
                   style={{
                     fontSize: "12px",
                     color: "gray",
+                    marginLeft: "38px"
                   }}
                 >
                   {"R$ 3,50 / "}
@@ -107,6 +109,7 @@ const CardCoca = () => {
               style={{
                 fontSize: "12px",
                 color: "gray",
+                marginLeft: "28px"
               }}
             >
               {"Resgates: "}
